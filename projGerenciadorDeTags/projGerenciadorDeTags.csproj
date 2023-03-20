@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <AssemblyName>Gerenciador de Tags</AssemblyName>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -29,18 +29,25 @@ namespace projGerenciadorDeTags.View
 
         private void OnButtonSaveClick(object sender, EventArgs e)
         {
-            if (CheckConditions())
+            try 
             {
-                string type = cbxType.SelectedIndex == 0 ? "Branch" : "City"; 
-                DatabaseController.Create
-                (
-                    new Tag(){Title = txtTitle.Text, Content = txtContent.Text},
-                    type
-                );
-                MessageBox.Show("Tag cadastrada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
+                if (CheckConditions())
+                {
+                    string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
+                    Task.Run(() => DatabaseController.Create
+                    (
+                        new Tag() { Title = txtTitle.Text, Content = txtContent.Text },
+                        type
+                    ));
+                    MessageBox.Show("Tag cadastrada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+                else MessageBox.Show("Confira as informações antes de continuar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("Confira as informações antes de continuar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Não foi possível salvar a tag no servidor. Tente mais tarde. Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool CheckConditions()

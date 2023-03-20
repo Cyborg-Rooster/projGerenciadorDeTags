@@ -10,11 +10,19 @@ namespace projGerenciadorDeTags
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            DatabaseController.Initialize();
-            Application.Run(new FrmMain());
+            try
+            {
+                // To customize application configuration such as set high DPI settings or default font,
+                // see https://aka.ms/applicationconfiguration.
+                DatabaseController.Initialize().Wait();
+                ApplicationConfiguration.Initialize();
+                Application.Run(new FrmMain());
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show($"Não foi possível sincronizar com o banco de dados. Erro: {e.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
     }
 }

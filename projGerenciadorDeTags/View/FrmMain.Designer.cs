@@ -36,10 +36,9 @@
             this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.lblLink = new System.Windows.Forms.LinkLabel();
-            this.uscEdit1 = new projGerenciadorDeTags.View.UscEdit();
+            this.uscBuilder1 = new projGerenciadorDeTags.View.UscBuilder();
             this.uscCreate1 = new projGerenciadorDeTags.View.UscCreate();
-            this.uscBuilder1 = new View.UscBuilder();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uscEdit1 = new projGerenciadorDeTags.View.UscEdit();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.pnlContent.SuspendLayout();
@@ -54,7 +53,7 @@
             this.pnlHeader.Controls.Add(this.ptbLogo);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(782, 76);
             this.pnlHeader.TabIndex = 1;
@@ -112,7 +111,7 @@
             // 
             this.ptbLogo.Image = ((System.Drawing.Image)(resources.GetObject("ptbLogo.Image")));
             this.ptbLogo.Location = new System.Drawing.Point(31, 21);
-            this.ptbLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbLogo.Margin = new System.Windows.Forms.Padding(4);
             this.ptbLogo.Name = "ptbLogo";
             this.ptbLogo.Size = new System.Drawing.Size(125, 38);
             this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,15 +120,11 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlContent.Dock = DockStyle.Fill;
             this.pnlContent.Controls.Add(this.lblLink);
-            this.pnlContent.Controls.Add(this.label1);
+            this.pnlContent.Controls.Add(this.uscBuilder1);
             this.pnlContent.Controls.Add(this.uscCreate1);
             this.pnlContent.Controls.Add(this.uscEdit1);
-            this.pnlContent.Controls.Add(this.uscBuilder1);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(0, 76);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContent.Name = "pnlContent";
@@ -141,32 +136,14 @@
             this.lblLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblLink.AutoSize = true;
             this.lblLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblLink.Location = new System.Drawing.Point(86, 440);
+            this.lblLink.Location = new System.Drawing.Point(4, 445);
             this.lblLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLink.Name = "lblLink";
-            this.lblLink.Size = new System.Drawing.Size(56, 20);
+            this.lblLink.Size = new System.Drawing.Size(128, 20);
             this.lblLink.TabIndex = 10;
             this.lblLink.TabStop = true;
-            this.lblLink.Text = "Enrique";
+            this.lblLink.Text = "Criado por Enrique";
             this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
-            // 
-            // uscEdit1
-            // 
-            this.uscEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscEdit1.Location = new System.Drawing.Point(0, 0);
-            this.uscEdit1.Name = "uscEdit1";
-            this.uscEdit1.Size = new System.Drawing.Size(782, 469);
-            this.uscEdit1.TabIndex = 0;
-            this.uscEdit1.Visible = false;
-            // 
-            // uscCreate1
-            // 
-            this.uscCreate1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscCreate1.Location = new System.Drawing.Point(0, 0);
-            this.uscCreate1.Name = "uscCreate1";
-            this.uscCreate1.Size = new System.Drawing.Size(782, 469);
-            this.uscCreate1.TabIndex = 1;
-            this.uscCreate1.Visible = false;
             // 
             // uscBuilder1
             // 
@@ -177,21 +154,27 @@
             this.uscBuilder1.TabIndex = 1;
             this.uscBuilder1.Visible = true;
             // 
-            // label1
+            // uscCreate1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(13, 440);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Criado por";
+            this.uscCreate1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscCreate1.Location = new System.Drawing.Point(0, 0);
+            this.uscCreate1.Name = "uscCreate1";
+            this.uscCreate1.Size = new System.Drawing.Size(782, 469);
+            this.uscCreate1.TabIndex = 1;
+            this.uscCreate1.Visible = false;
+            // 
+            // uscEdit1
+            // 
+            this.uscEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscEdit1.Location = new System.Drawing.Point(0, 0);
+            this.uscEdit1.Name = "uscEdit1";
+            this.uscEdit1.Size = new System.Drawing.Size(782, 469);
+            this.uscEdit1.TabIndex = 0;
+            this.uscEdit1.Visible = false;
             // 
             // FrmMain
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(782, 545);
             this.Controls.Add(this.pnlContent);
@@ -218,7 +201,6 @@
         private Panel pnlContent;
         private View.UscBuilder uscBuilder1;
         private LinkLabel lblLink;
-        private Label label1;
         private View.UscCreate uscCreate1;
         private View.UscEdit uscEdit1;
     }

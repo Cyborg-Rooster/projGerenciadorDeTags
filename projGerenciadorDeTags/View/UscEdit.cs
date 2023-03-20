@@ -32,22 +32,29 @@ namespace projGerenciadorDeTags.View
 
         private void OnButtonSaveClick(object sender, EventArgs e)
         {
-            if (CheckValues())
-            {
-                var response = MessageBox.Show("Você tem certeza que quer alterar a tag?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(response == DialogResult.Yes) 
+            try 
+            { 
+                if (CheckValues())
                 {
-                    string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
-                    Tag tag = DatabaseController.LoadTagAsTag(cbxTagToEdit.Text, type);
-                    if(txtTitle.Text != string.Empty) tag.Title = txtTitle.Text;
-                    if(txtContent.Text != string.Empty) tag.Content = txtContent.Text;
+                    var response = MessageBox.Show("Você tem certeza que quer alterar a tag?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (response == DialogResult.Yes)
+                    {
+                        string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
+                        Tag tag = DatabaseController.LoadTagAsTag(cbxTagToEdit.Text, type);
+                        if (txtTitle.Text != string.Empty) tag.Title = txtTitle.Text;
+                        if (txtContent.Text != string.Empty) tag.Content = txtContent.Text;
 
-                    DatabaseController.Edit(tag, cbxTagToEdit.Text, type);
-                    MessageBox.Show("Tag editada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                        DatabaseController.Edit(tag, cbxTagToEdit.Text, type).Wait();
+                        MessageBox.Show("Tag editada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
                 }
+                else MessageBox.Show("Verifique os valores antes de continuar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("Verifique os valores antes de continuar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Não foi possível salvar a tag no servidor. Tente mais tarde. Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void OnCbxTypeSelectedChanged(object sender, EventArgs e)
@@ -68,17 +75,32 @@ namespace projGerenciadorDeTags.View
 
         private void OnButtonDeleteClick(object sender, EventArgs e)
         {
-            if (cbxTagToEdit.SelectedIndex >= 0)
-            {
-                var response = MessageBox.Show("Você tem certeza que quer excluir a tag? Isso não poderá ser disfeito.", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (response == DialogResult.Yes)
+            try { 
+                if (cbxTagToEdit.SelectedIndex >= 0)
                 {
-                    string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
-                    DatabaseController.Remove(cbxTagToEdit.Text, type);
-                    MessageBox.Show("Tag excluída.", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    Clear();
-                }
-            }else MessageBox.Show("Escolha uma tag para ser excluída.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var response = MessageBox.Show("Você tem certeza que quer excluir a tag? Isso não poderá ser disfeito.", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (response == DialogResult.Yes)
+                    {
+                        string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
+                        DatabaseController.Remove((cbxTagToEdit.SelectedIndex + 1).ToString(), type).Wait();
+                        MessageBox.Show("Tag excluída.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                } else MessageBox.Show("Escolha uma tag para ser excluída.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Não foi possível deletar a tag, tente novamente mais tarde. Erro:{ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OnCbxTagToEditSelectedValueChanged(object sender, EventArgs e)
+        {
+            string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
+            var t = DatabaseController.LoadTagAsTag(cbxTagToEdit.Text, type);
+            txtTitle.Text = t.Title;
+            txtContent.Text = t.Content;
         }
     }
 }

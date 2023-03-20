@@ -122,6 +122,7 @@
             this.cbxTagToEdit.Size = new System.Drawing.Size(318, 28);
             this.cbxTagToEdit.TabIndex = 1;
             this.cbxTagToEdit.Text = "--Selecionar--";
+            this.cbxTagToEdit.SelectedIndexChanged += new System.EventHandler(this.OnCbxTagToEditSelectedValueChanged);
             // 
             // btnSave
             // 

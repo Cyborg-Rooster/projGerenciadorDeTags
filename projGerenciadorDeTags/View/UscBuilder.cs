@@ -1,4 +1,6 @@
 ﻿using projGerenciadorDeTags.Controller;
+using projGerenciadorDeTags.Model;
+using System.Text.Json;
 
 namespace projGerenciadorDeTags.View
 {
@@ -31,5 +33,6 @@ namespace projGerenciadorDeTags.View
             cbxBranch.Items.AddRange(DatabaseController.LoadTagsTitle("Branch"));
             cbxCity.Items.AddRange(DatabaseController.LoadTagsTitle("City"));
         }
+
     }
 }
