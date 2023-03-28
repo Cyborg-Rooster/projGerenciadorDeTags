@@ -54,13 +54,13 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.AutoSize = true;
             this.lblDescription.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblDescription.Location = new System.Drawing.Point(71, 81);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(340, 20);
+            this.lblDescription.Size = new System.Drawing.Size(739, 20);
             this.lblDescription.TabIndex = 8;
-            this.lblDescription.Text = "Cadastre tags para um ramo ou cidade específica.";
+            this.lblDescription.Text = "Cadastre tags para um ramo ou cidade específica. Escreva [cidade] para o preenchi" +
+    "mento automatico.";
             // 
             // lblTitle
             // 

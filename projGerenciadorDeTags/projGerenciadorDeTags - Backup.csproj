@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <AssemblyName>Gerenciador de Tags</AssemblyName>
-    <Version>1.1.2</Version>
+    <Version>1.1.1</Version>
     <Authors>Enrique Rodrigues</Authors>
     <Company>LTB Marketing Digital</Company>
   </PropertyGroup>

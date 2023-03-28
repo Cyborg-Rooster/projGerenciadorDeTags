@@ -30,6 +30,7 @@ namespace projGerenciadorDeTags.View
             cbxCity.Items.Clear();
             cbxBranch.Text = "--Selecionar--";
             cbxCity.Text = "--Selecionar--";
+            txtResult.Clear();
             cbxBranch.Items.AddRange(DatabaseController.LoadTagsTitle("Branch"));
             cbxCity.Items.AddRange(DatabaseController.LoadTagsTitle("City"));
         }
