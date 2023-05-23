@@ -6,15 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>tags.ico</ApplicationIcon>
     <AssemblyName>Gerenciador de Tags</AssemblyName>
-    <Version>1.1.2</Version>
+    <Version>1.2.0</Version>
     <Authors>Enrique Rodrigues</Authors>
     <Company>LTB Marketing Digital</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="tags.ico" />
   </ItemGroup>
 
 </Project>

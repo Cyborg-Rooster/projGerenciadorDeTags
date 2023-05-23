@@ -11,6 +11,7 @@ namespace projGerenciadorDeTags
         public FrmMain()
         {
             InitializeComponent();
+            lblNVersion.Text = $"v{Application.ProductVersion}";
         }
 
         private void OnLabelOver(object sender, EventArgs e)

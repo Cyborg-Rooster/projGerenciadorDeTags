@@ -29,121 +29,133 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblBuilder = new System.Windows.Forms.Label();
-            this.lblCreate = new System.Windows.Forms.Label();
-            this.lblEdit = new System.Windows.Forms.Label();
-            this.ptbLogo = new System.Windows.Forms.PictureBox();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblLink = new System.Windows.Forms.LinkLabel();
-            this.uscBuilder1 = new projGerenciadorDeTags.View.UscBuilder();
-            this.uscCreate1 = new projGerenciadorDeTags.View.UscCreate();
-            this.uscEdit1 = new projGerenciadorDeTags.View.UscEdit();
-            this.pnlHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
-            this.pnlContent.SuspendLayout();
-            this.SuspendLayout();
+            pnlHeader = new Panel();
+            lblNVersion = new Label();
+            lblBuilder = new Label();
+            lblCreate = new Label();
+            lblEdit = new Label();
+            ptbLogo = new PictureBox();
+            pnlContent = new Panel();
+            lblLink = new LinkLabel();
+            uscBuilder1 = new View.UscBuilder();
+            uscCreate1 = new View.UscCreate();
+            uscEdit1 = new View.UscEdit();
+            pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbLogo).BeginInit();
+            pnlContent.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(235)))), ((int)(((byte)(93)))));
-            this.pnlHeader.Controls.Add(this.lblBuilder);
-            this.pnlHeader.Controls.Add(this.lblCreate);
-            this.pnlHeader.Controls.Add(this.lblEdit);
-            this.pnlHeader.Controls.Add(this.ptbLogo);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(782, 76);
-            this.pnlHeader.TabIndex = 1;
+            pnlHeader.BackColor = Color.FromArgb(251, 235, 93);
+            pnlHeader.Controls.Add(lblNVersion);
+            pnlHeader.Controls.Add(lblBuilder);
+            pnlHeader.Controls.Add(lblCreate);
+            pnlHeader.Controls.Add(lblEdit);
+            pnlHeader.Controls.Add(ptbLogo);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Margin = new Padding(4);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(782, 76);
+            pnlHeader.TabIndex = 1;
+            // 
+            // lblNVersion
+            // 
+            lblNVersion.AutoSize = true;
+            lblNVersion.ForeColor = SystemColors.ControlDarkDark;
+            lblNVersion.Location = new Point(163, 44);
+            lblNVersion.Name = "lblNVersion";
+            lblNVersion.Size = new Size(46, 15);
+            lblNVersion.TabIndex = 7;
+            lblNVersion.Text = "v0.0.0.0";
             // 
             // lblBuilder
             // 
-            this.lblBuilder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBuilder.AutoSize = true;
-            this.lblBuilder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBuilder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblBuilder.Location = new System.Drawing.Point(389, 31);
-            this.lblBuilder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBuilder.Name = "lblBuilder";
-            this.lblBuilder.Size = new System.Drawing.Size(72, 20);
-            this.lblBuilder.TabIndex = 4;
-            this.lblBuilder.Text = "Gerar Tag";
-            this.lblBuilder.Click += new System.EventHandler(this.OnLblBuildClick);
-            this.lblBuilder.MouseLeave += new System.EventHandler(this.OnLabelLeave);
-            this.lblBuilder.MouseHover += new System.EventHandler(this.OnLabelOver);
+            lblBuilder.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblBuilder.AutoSize = true;
+            lblBuilder.Cursor = Cursors.Hand;
+            lblBuilder.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblBuilder.Location = new Point(389, 31);
+            lblBuilder.Margin = new Padding(4, 0, 4, 0);
+            lblBuilder.Name = "lblBuilder";
+            lblBuilder.Size = new Size(56, 15);
+            lblBuilder.TabIndex = 4;
+            lblBuilder.Text = "Gerar Tag";
+            lblBuilder.Click += OnLblBuildClick;
+            lblBuilder.MouseLeave += OnLabelLeave;
+            lblBuilder.MouseHover += OnLabelOver;
             // 
             // lblCreate
             // 
-            this.lblCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCreate.AutoSize = true;
-            this.lblCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCreate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreate.Location = new System.Drawing.Point(505, 31);
-            this.lblCreate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCreate.Name = "lblCreate";
-            this.lblCreate.Size = new System.Drawing.Size(99, 20);
-            this.lblCreate.TabIndex = 5;
-            this.lblCreate.Text = "Cadastrar Tag";
-            this.lblCreate.Click += new System.EventHandler(this.OnLblCreateClick);
-            this.lblCreate.MouseLeave += new System.EventHandler(this.OnLabelLeave);
-            this.lblCreate.MouseHover += new System.EventHandler(this.OnLabelOver);
+            lblCreate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblCreate.AutoSize = true;
+            lblCreate.Cursor = Cursors.Hand;
+            lblCreate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCreate.Location = new Point(505, 31);
+            lblCreate.Margin = new Padding(4, 0, 4, 0);
+            lblCreate.Name = "lblCreate";
+            lblCreate.Size = new Size(78, 15);
+            lblCreate.TabIndex = 5;
+            lblCreate.Text = "Cadastrar Tag";
+            lblCreate.Click += OnLblCreateClick;
+            lblCreate.MouseLeave += OnLabelLeave;
+            lblCreate.MouseHover += OnLabelOver;
             // 
             // lblEdit
             // 
-            this.lblEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEdit.AutoSize = true;
-            this.lblEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEdit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEdit.Location = new System.Drawing.Point(649, 30);
-            this.lblEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(74, 20);
-            this.lblEdit.TabIndex = 6;
-            this.lblEdit.Text = "Editar tag";
-            this.lblEdit.Click += new System.EventHandler(this.OnLblEditClick);
-            this.lblEdit.MouseLeave += new System.EventHandler(this.OnLabelLeave);
-            this.lblEdit.MouseHover += new System.EventHandler(this.OnLabelOver);
+            lblEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblEdit.AutoSize = true;
+            lblEdit.Cursor = Cursors.Hand;
+            lblEdit.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEdit.ForeColor = SystemColors.ControlText;
+            lblEdit.Location = new Point(649, 30);
+            lblEdit.Margin = new Padding(4, 0, 4, 0);
+            lblEdit.Name = "lblEdit";
+            lblEdit.Size = new Size(57, 15);
+            lblEdit.TabIndex = 6;
+            lblEdit.Text = "Editar tag";
+            lblEdit.Click += OnLblEditClick;
+            lblEdit.MouseLeave += OnLabelLeave;
+            lblEdit.MouseHover += OnLabelOver;
             // 
             // ptbLogo
             // 
-            this.ptbLogo.Image = ((System.Drawing.Image)(resources.GetObject("ptbLogo.Image")));
-            this.ptbLogo.Location = new System.Drawing.Point(31, 21);
-            this.ptbLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.ptbLogo.Name = "ptbLogo";
-            this.ptbLogo.Size = new System.Drawing.Size(125, 38);
-            this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbLogo.TabIndex = 0;
-            this.ptbLogo.TabStop = false;
+            ptbLogo.Image = (Image)resources.GetObject("ptbLogo.Image");
+            ptbLogo.Location = new Point(31, 21);
+            ptbLogo.Margin = new Padding(4);
+            ptbLogo.Name = "ptbLogo";
+            ptbLogo.Size = new Size(125, 38);
+            ptbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptbLogo.TabIndex = 0;
+            ptbLogo.TabStop = false;
             // 
             // pnlContent
             // 
-            this.pnlContent.Controls.Add(this.lblLink);
+            pnlContent.Controls.Add(lblLink);
             this.pnlContent.Controls.Add(this.uscBuilder1);
-            this.pnlContent.Controls.Add(this.uscCreate1);
-            this.pnlContent.Controls.Add(this.uscEdit1);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 76);
-            this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(782, 469);
-            this.pnlContent.TabIndex = 2;
+            pnlContent.Controls.Add(uscCreate1);
+            pnlContent.Controls.Add(uscEdit1);
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(0, 76);
+            pnlContent.Margin = new Padding(2);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(782, 469);
+            pnlContent.TabIndex = 2;
             // 
             // lblLink
             // 
-            this.lblLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblLink.AutoSize = true;
-            this.lblLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblLink.Location = new System.Drawing.Point(4, 445);
-            this.lblLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLink.Name = "lblLink";
-            this.lblLink.Size = new System.Drawing.Size(128, 20);
-            this.lblLink.TabIndex = 10;
-            this.lblLink.TabStop = true;
-            this.lblLink.Text = "Criado por Enrique";
-            this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
+            lblLink.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblLink.AutoSize = true;
+            lblLink.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblLink.Location = new Point(4, 445);
+            lblLink.Margin = new Padding(4, 0, 4, 0);
+            lblLink.Name = "lblLink";
+            lblLink.Size = new Size(105, 15);
+            lblLink.TabIndex = 10;
+            lblLink.TabStop = true;
+            lblLink.Text = "Criado por Enrique";
+            lblLink.LinkClicked += lblLink_LinkClicked;
             // 
             // uscBuilder1
             // 
@@ -156,39 +168,40 @@
             // 
             // uscCreate1
             // 
-            this.uscCreate1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscCreate1.Location = new System.Drawing.Point(0, 0);
-            this.uscCreate1.Name = "uscCreate1";
-            this.uscCreate1.Size = new System.Drawing.Size(782, 469);
-            this.uscCreate1.TabIndex = 1;
-            this.uscCreate1.Visible = false;
+            uscCreate1.Dock = DockStyle.Fill;
+            uscCreate1.Location = new Point(0, 0);
+            uscCreate1.Margin = new Padding(2, 2, 2, 2);
+            uscCreate1.Name = "uscCreate1";
+            uscCreate1.Size = new Size(782, 469);
+            uscCreate1.TabIndex = 1;
+            uscCreate1.Visible = false;
             // 
             // uscEdit1
             // 
-            this.uscEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscEdit1.Location = new System.Drawing.Point(0, 0);
-            this.uscEdit1.Name = "uscEdit1";
-            this.uscEdit1.Size = new System.Drawing.Size(782, 469);
-            this.uscEdit1.TabIndex = 0;
-            this.uscEdit1.Visible = false;
+            uscEdit1.Dock = DockStyle.Fill;
+            uscEdit1.Location = new Point(0, 0);
+            uscEdit1.Margin = new Padding(3, 2, 3, 2);
+            uscEdit1.Name = "uscEdit1";
+            uscEdit1.Size = new Size(782, 469);
+            uscEdit1.TabIndex = 0;
+            uscEdit1.Visible = false;
             // 
             // FrmMain
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 545);
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeader);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(45, 18, 45, 18);
-            this.Name = "FrmMain";
-            this.Text = "LTB Marketing Digital | Gerenciador de Tags";
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
-            this.pnlContent.ResumeLayout(false);
-            this.pnlContent.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(782, 545);
+            Controls.Add(pnlContent);
+            Controls.Add(pnlHeader);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(45, 18, 45, 18);
+            Name = "FrmMain";
+            Text = "LTB Marketing Digital | Gerenciador de Tags";
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbLogo).EndInit();
+            pnlContent.ResumeLayout(false);
+            pnlContent.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -202,5 +215,6 @@
         private LinkLabel lblLink;
         private View.UscCreate uscCreate1;
         private View.UscEdit uscEdit1;
+        private Label lblNVersion;
     }
 }

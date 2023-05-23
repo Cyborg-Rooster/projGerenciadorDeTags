@@ -82,7 +82,8 @@ namespace projGerenciadorDeTags.View
                     if (response == DialogResult.Yes)
                     {
                         string type = cbxType.SelectedIndex == 0 ? "Branch" : "City";
-                        DatabaseController.Remove((cbxTagToEdit.SelectedIndex + 1).ToString(), type).Wait();
+                        Tag tag = DatabaseController.LoadTagAsTag(cbxTagToEdit.Text, type);
+                        DatabaseController.Remove(tag.Id.ToString(), type).Wait();
                         MessageBox.Show("Tag excluída.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Clear();
                     }

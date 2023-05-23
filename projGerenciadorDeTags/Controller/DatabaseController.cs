@@ -16,7 +16,7 @@ namespace projGerenciadorDeTags.Controller
 {
     class DatabaseController
     {
-        static readonly string databasePath = Application.StartupPath + @"\database.xml";
+        static readonly string databasePath = Application.UserAppDataPath + @"\database.xml";
         static XDocument Xml;
 
         public async static Task Initialize()
